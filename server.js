@@ -14,7 +14,7 @@ mongoose
   .connect('mongodb://localhost/eStudyHelper', {})
   .then(() => console.log('MongoDB database Connected...'))
   .catch((err) => console.log(err))
-//appuse
+//app use
 app.use('/api/eStudyHelper', eStudyHelper)
 
 app.get('/', (req, res) => {
