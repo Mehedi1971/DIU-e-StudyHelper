@@ -1,0 +1,27 @@
+{
+  "name": "diu-e-studyhelper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js --ignore 'diu-e-studyhelper/'",
+    "diu-e-studyhelper": "npm run serve --prefix diu-e-studyhelper",
+    "dev": "concurrently \"npm run server\" \"npm run diu-e-studyhelper\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.3",
+    "morgan": "^1.10.0"
+  }
+}
