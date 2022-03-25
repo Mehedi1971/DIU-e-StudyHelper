@@ -1,16 +1,55 @@
 <template>
-  <!-- <div
-    class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
-  >
-    <NavLanding /> -->
+  <!-- <div class="object-coverobject-center">
+    <img
+      class="object-cover h-8 w-10 object-center"
+      alt="Vue logo"
+      src="../assets/logo.png"
+    />
+    <h3 class="font-extrabold">Sign Up Page</h3>
+  </div>
+  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="Name"
+      >Name</label
+    >
+    <input
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+      type="text"
+      placeholder="Enter Name"
+      v-model="name"
+    />
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="email"
+      >Email</label
+    >
+    <input
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+      type="text"
+      placeholder="Enter Email"
+      v-model="email"
+    />
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="password"
+      >Password</label
+    >
+    <input
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+      type="password"
+      placeholder="Enter Password"
+      v-model="password"
+    />
+    <button
+      class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+      @click="signUp"
+    >
+      Sign Up
+    </button>
+  </div> -->
+
   <div>
     <!-- class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
   > -->
-    <Header />
-
-    <div class="flex items-center justify-center min-h-screen bg-gray-100">
-      <div class="px-8 py-6 mx-4 text-left bg-white shadow-lg">
-        <h3 class="text-2xl font-bold text-center">Update Your Profile</h3>
+    <!-- <NavLanding /> -->
+    <div class="flex mt-5 items-center justify-center min-h-screen bg-gray-100">
+      <div class="px-8 py-6 mx-4 mt-5 text-left bg-white shadow-lg">
+        <h3 class="text-2xl font-bold text-center">Join us</h3>
 
         <div class="mt-2">
           <div>
@@ -18,36 +57,36 @@
             <input
               type="text"
               placeholder="Name"
-              v-model="profile.name"
+              v-model="name"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
           </div>
 
-          <div class="mt-2">
+          <!-- <div class="mt-2">
             <label class="block" for="studentID">Student ID</label>
             <input
               type="text"
               placeholder="Student ID"
-              v-model="profile.studentID"
+              v-model="studentID"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
-          </div>
+          </div> -->
 
           <div class="mt-2">
             <label class="block" for="email">Email</label>
             <input
               type="text"
               placeholder="Email"
-              v-model="profile.email"
+              v-model="email"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
           </div>
-          <div class="mt-2">
+          <!-- <div class="mt-2">
             <label class="block" for="phone">Phone Number</label>
             <input
               type="text"
               placeholder="Phone Number"
-              v-model="profile.phone"
+              v-model="phone"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
           </div>
@@ -57,7 +96,7 @@
             <input
               type="text"
               placeholder="Address"
-              v-model="profile.address"
+              v-model="address"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
           </div>
@@ -68,31 +107,32 @@
               rows="3"
               cols="50"
               placeholder="Description"
-              v-model="profile.description"
+              v-model="description"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
           </div>
-          <!-- <div class="mt-2">
+          <div class="mt-2">
             <label class="block" for="image">Upload Your Image</label>
             <input
               type="file"
+              name="image"
               placeholder="Upload Your Image"
               @change="onFileSelected"
               class="w-full py-2"
             />
           </div> -->
 
-          <div class="mt-2">
+          <!-- <div class="mt-2">
             <label class="block" for="image">image</label>
             <input
               type="text"
               placeholder="image"
-              v-model="profile.image"
+              v-model="image"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
-          </div>
+          </div> -->
 
-          <!-- <div class="mt-2">
+          <div class="mt-2">
             <label for="password" class="block">Password</label>
             <input
               id="password"
@@ -103,7 +143,7 @@
               required=""
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
             />
-          </div> -->
+          </div>
           <!-- <div class="mt-4">
             <label class="block">Confirm Password</label>
             <input
@@ -116,19 +156,24 @@
           <div class="flex">
             <button
               type="submit"
-              @click="update"
+              @click="signUp"
               class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900"
             >
-              Save
+              Create Account
             </button>
+          </div>
+          <div class="mt-6 text-grey-dark">
+            Already have an account?
+            <router-link class="text-blue-600 hover:underline" to="/adminLogin">
+              Log in
+            </router-link>
           </div>
         </div>
       </div>
     </div>
-
     <!-- <div class="max-w-md w-full space-y-8">
-      <div> -->
-    <!-- <div class="md:flex justify-center md:items-center cursor-pointer">
+      <div>
+        <div class="md:flex justify-center md:items-center cursor-pointer">
           <span class="text-green-500 text-xl mr-1">
             <i class="bi bi-stack"></i>
           </span>
@@ -138,95 +183,76 @@
               ><span class="text-green-500">-StudyHelper</span></router-link
             >
           </h1>
-        </div> -->
-    <!-- <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Update Your profile
+        </div>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Sign in to your account
         </h2>
       </div> -->
     <!-- autocomplete="email"
             required="" -->
     <!-- <div class="rounded-md shadow-sm -space-y-px">
         <div>
-          <label for="name" class="sr-only">User Name</label>
+          <label for="name" class="block text-sm">User Name</label>
           <input
             type="text"
-            v-model="profile.name"
+            v-model="name"
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="User Name"
           />
         </div>
         <div>
-          <label for="studentId" class="sr-only">studentId</label>
-          <input
-            id="studentId"
-            name="studentId"
-            type="text"
-            v-model="profile.studentID"
-            required=""
-            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="studentId"
-          />
-        </div>
-
-        <div>
-          <label for="Address" class="sr-only">Address</label>
-          <input
-            id="Address"
-            name="Address"
-            type="text"
-            v-model="profile.address"
-            required=""
-            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="Address"
-          />
-        </div>
-
-        <div>
-          <label for="description" class="sr-only">Description</label>
-          <input
-            id="description"
-            name="description"
-            type="text"
-            v-model="profile.description"
-            required=""
-            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="description"
-          />
-        </div>
-
-        <div>
           <label for="email" class="sr-only">Email address</label>
           <input
             type="text"
-            v-model="profile.email"
+            v-model="email"
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Email address"
           />
-        </div> -->
-    <!-- <div>
+        </div>
+        <div>
           <label for="password" class="sr-only">Password</label>
           <input
             id="password"
             name="password"
             type="password"
             autocomplete="current-password"
-            v-model="profile.password"
+            v-model="password"
             required=""
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             placeholder="Password"
           />
-        </div> -->
-    <!-- </div>
+        </div>
+      </div> -->
 
-      <div>
+    <!-- <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input
+            id="remember-me"
+            name="remember-me"
+            type="checkbox"
+            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          />
+          <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+            Remember me
+          </label>
+        </div>
+
+        <div class="text-sm">
+          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
+            Forgot your password?
+          </a>
+        </div>
+      </div> -->
+
+    <!-- <div>
         <button
           type="submit"
           class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          @click="update"
+          @click="signUp"
         >
           <span class="absolute left-0 inset-y-0 flex items-center pl-3">
           </span>
-          update
+          Sign Up
         </button>
       </div>
     </div> -->
@@ -234,55 +260,63 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue'
+// import NavLanding from './NavLanding.vue'
 import axios from 'axios'
 export default {
-  name: 'SignUp',
+  name: 'AdminSignUp',
   components: {
-    Header,
+    // NavLanding,
   },
   data() {
     return {
-      profile: {
-        name: '',
-        email: '',
-        password: '',
-        image: '',
-        description: '',
-        studentID: '',
-        address: '',
-        phone: '',
-      },
+      name: '',
+      email: '',
+      password: '',
+      // image: '',
+      // description: '',
+      // phone: '',
+      // studentID: '',
+      // address: '',
     }
   },
   methods: {
-    async update() {
-      console.log(this.profile)
-      const result = await axios.patch('user/' + this.$route.params.id, {
-        name: this.profile.name,
-        email: this.profile.email,
-        phone: this.profile.phone,
-        image: this.profile.image,
-        description: this.profile.description,
-        studentID: this.profile.studentID,
-        address: this.profile.address,
-      })
+    async signUp() {
+      console.log(
+        'http://localhost:3000/api/eStudyHelper/admin/signup/',
+        this.name,
+        this.email,
+        this.password
+      )
+      const result = await axios.post(
+        'http://localhost:3000/api/eStudyHelper/admin/signup/',
+        {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          // image: this.image,
+          // description: this.description,
+          // phone: this.phone,
+          // studentID: this.studentID,
+          // address: this.address,
+        }
+      )
+
       console.log(result)
       if (result.status == 200) {
-        this.$router.push({ name: 'Profile' })
+        // localStorage.setItem('user-info', JSON.stringify(result.data))
+        this.$router.push({ name: 'AdminLogin' })
       }
     },
+    onFileSelected(event) {
+      this.image = event.target.file[0]
+    },
   },
-  async mounted() {
-    // const user = localStorage.getItem('user-info')
-    // if (!user) {
-    //   this.$router.push({ name: 'Home' })
-    // }
-    const result = await axios.get('user')
-    console.log(result.data)
-    this.profile = result.data
-    // +this.$route.params.id
-  },
+  // mounted() {
+  //   const user = localStorage.getItem('user-info')
+  //   if (user) {
+  //     this.$router.push({ name: 'Login' })
+  //   }
+  // },
 }
 </script>
 

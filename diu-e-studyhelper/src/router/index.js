@@ -8,8 +8,15 @@ import Profile from '../views/Profile.vue'
 import UpdateProfile from '../views/UpdateProfile.vue'
 import Login from '../components/Login.vue'
 import SignUp from '../components/SignUp.vue'
+import Todo from '../components/Todo.vue'
 import Forum from '../views/Forum.vue'
 import Dashboard from '../views/Dashboard.vue'
+import AdminQuestionBank from '../views/AdminQuestionBank.vue'
+import AdminLogin from '../components/AdminLogin.vue'
+import AdminSignUp from '../components/AdminSignUp.vue'
+import AdminDashboard from '../views/AdminDashboard.vue'
+import CourseMaterialsLinks from '../views/CourseMaterialsLinks.vue'
+
 const routes = [
   {
     path: '/',
@@ -27,14 +34,29 @@ const routes = [
     component: Links,
   },
   {
+    path: '/todo',
+    name: 'Todo',
+    component: Todo,
+  },
+  {
     path: '/questionBank',
     name: 'QuestionBank',
     component: QuestionBank,
   },
   {
+    path: '/adminQuestionBank',
+    name: 'AdminQuestionBank',
+    component: AdminQuestionBank,
+  },
+  {
     path: '/coursematerials',
     name: 'CourseMaterials',
     component: CourseMaterials,
+  },
+  {
+    path: '/courseMaterialsLinks/:id',
+    name: 'CourseMaterialsLinks',
+    component: CourseMaterialsLinks,
   },
   {
     path: '/updateprofile/:id',
@@ -52,14 +74,29 @@ const routes = [
     component: Login,
   },
   {
+    path: '/adminLogin',
+    name: 'AdminLogin',
+    component: AdminLogin,
+  },
+  {
     path: '/signUp',
     name: 'SignUp',
     component: SignUp,
   },
   {
+    path: '/adminSignUp',
+    name: 'AdminSignUp',
+    component: AdminSignUp,
+  },
+  {
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+  },
+  {
+    path: '/adminDashboard',
+    name: 'AdminDashboard',
+    component: AdminDashboard,
   },
   {
     path: '/forum',

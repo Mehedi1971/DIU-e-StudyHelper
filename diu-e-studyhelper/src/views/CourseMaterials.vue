@@ -92,13 +92,13 @@
             >
               <img
                 class="w-full h-10"
-                src="../assets/mehedi.jpg"
+                src="../assets/diu05.png"
                 alt="Sunset in the mountains"
               />
+              <!-- :href="items.questions" -->
               <div class="p-6">
                 <a
-                  :href="items.questions"
-                  target="_blank"
+                  :href="`/courseMaterialsLinks/` + items._id"
                   class="hover:no-underline"
                 >
                   <h5
@@ -107,12 +107,13 @@
                     {{ course }}
                   </h5>
                 </a>
+                <!-- target="_blank" -->
                 <p>Term: {{ term }}</p>
                 <p>Level: {{ level }}</p>
+
                 <a
-                  :href="items.questions"
+                  :href="`/courseMaterialsLinks/` + items._id"
                   class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hover:no-underline"
-                  target="_blank"
                 >
                   Go
                   <svg
@@ -159,6 +160,7 @@ export default {
       course: '',
       questions: '',
       exam: '',
+      id: '',
       questionBank: [],
     }
   },
@@ -173,11 +175,14 @@ export default {
   },
   methods: {
     async show() {
-      let result = await axios.get(
+      const result = await axios.get(
         `http://localhost:3000/api/eStudyHelper/coursematerials?level=${this.level}&term=${this.term}&course=${this.course}`
       )
+
       console.log(result)
+
       this.questionBank = result.data
+
       // if (result.status == 200 && result.data.length > 0) {
       //   console.log('k')
       //   this.url = result.url

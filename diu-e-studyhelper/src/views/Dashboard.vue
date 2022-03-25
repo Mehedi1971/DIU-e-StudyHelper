@@ -1,19 +1,25 @@
 <template>
   <div>
     <Header></Header>
-    <h1 class="pt-10 bg-gray-200">Welcome {{ name }}</h1>
-    <h1 class="pt-10 bg-gray-200">Welcome {{ email }}</h1>
+    <div><Todo /></div>
+    <Footer />
+    <!-- <h1 class="pt-10 bg-gray-200">Welcome {{ name }}</h1>
+    <h1 class="pt-10 bg-gray-200">Welcome {{ email }}</h1> -->
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import Header from '../components/Header.vue'
+import Todo from '../components/Todo.vue'
+import Footer from '../components/Footer.vue'
 export default {
   name: 'Dashboard',
   props: ['user'],
   components: {
     Header,
+    Todo,
+    Footer,
   },
   data() {
     return {

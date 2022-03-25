@@ -52,30 +52,110 @@
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center">
           <div class="flex">
-            <div class="flex items-center cursor-pointer pl-6 pr-3">
-              <span class="text-green-500 text-xl mr-1">
+            <div>
+              <div class="flex items-center cursor-pointer pl-6 pr-3">
+                <router-link to="/" class="hover:no-underline">
+                  <img
+                    src="../assets/diu05.png"
+                    alt=""
+                    class="h-0 w-0 lg:h-11 lg:w-12"
+                /></router-link>
+                <!-- <span class="text-green-500 text-xl mr-1">
                 <i class="bi bi-stack"></i>
               </span>
               <h1 class="text-2xl font-bold">
                 <span class="text-blue-500">e</span
                 ><span class="text-green-500">-StudyHelper</span>
-              </h1>
+              </h1> -->
+              </div>
+              <button
+                class="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                type="button"
+                @click="toggleNavbar"
+              >
+                <i class="bi bi-list"></i>
+              </button>
             </div>
-            <router-link
-              to="/forum"
-              class="hover:no-underline text-black font-semibold rounded-lg px-4 py-2 | hover:bg-gray-200"
-              >Forum</router-link
+            <div
+              v-bind:class="{ hidden: !showMenu, flex: showMenu }"
+              class="lg:flex lg:flex-grow items-center"
             >
-            <router-link
-              to="/about"
-              class="hover:no-underline text-black font-semibold rounded-lg px-4 py-2 | hover:bg-gray-200"
-              >About</router-link
-            >
-            <router-link
-              to="/contact"
-              class="hover:no-underline text-black font-semibold rounded-lg px-4 py-2 | hover:bg-gray-200"
-              >Contact</router-link
-            >
+              <ul class="flex flex-col lg:flex-row list-none ml-auto">
+                <li>
+                  <router-link
+                    to="/dashboard"
+                    class="hover:no-underline text-black font-semibold rounded-lg px-4 | hover:bg-gray-200"
+                    >Dashboard</router-link
+                  >
+                </li>
+                <li>
+                  <router-link
+                    to="/forum"
+                    class="hover:no-underline text-black font-semibold rounded-lg px-4 | hover:bg-gray-200"
+                    >Forum</router-link
+                  >
+                </li>
+                <li>
+                  <router-link
+                    to="/about"
+                    class="hover:no-underline text-black font-semibold rounded-lg px-4 | hover:bg-gray-200"
+                    >About</router-link
+                  >
+                </li>
+                <li>
+                  <router-link
+                    to="/contact"
+                    class="hover:no-underline text-black font-semibold rounded-lg px-4 | hover:bg-gray-200"
+                    >Contact</router-link
+                  >
+                </li>
+                <li>
+                  <!-- more -->
+                  <div class="flex">
+                    <div class="relative">
+                      <button
+                        class="hover:no-underline text-black font-semibold rounded-lg px-4 | hover:bg-gray-200"
+                        @click="isOpen2 = true"
+                      >
+                        More
+                      </button>
+
+                      <div
+                        v-if="isOpen2"
+                        class="fixed inset-0 w-full h-screen"
+                        @click="isOpen2 = false"
+                      ></div>
+                      <div
+                        v-if="isOpen2"
+                        class="absolute z-30 right-0 mt-2"
+                        :class="{ hidden: !isOpen2 }"
+                      >
+                        <div class="bg-white rounded-lg shadow-lg py-2 w-48">
+                          <router-link
+                            to="/questionBank"
+                            class="block hover:no-underline text-gray-600 font-semibold px-4 py-2 | hover:text-black hover:bg-gray-200"
+                          >
+                            Question Bank</router-link
+                          >
+
+                          <router-link
+                            to="/coursematerials"
+                            class="block hover:no-underline text-gray-600 font-semibold px-4 py-2 | hover:text-black hover:bg-gray-200"
+                            >Course Materials</router-link
+                          >
+                          <router-link
+                            to="/links"
+                            class="block hover:no-underline text-gray-600 font-semibold px-4 py-2 | hover:text-black hover:bg-gray-200"
+                          >
+                            Links</router-link
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="flex">
             <h1 class="text-base pr-4 py-2">Hi,{{ name }}</h1>
@@ -205,9 +285,11 @@ export default {
   data() {
     return {
       // user: null,
+      showMenu: false,
       name: '',
       abcd: false,
       isOpen1: false,
+      isOpen2: false,
       id: '',
       image: '',
     }
@@ -228,9 +310,12 @@ export default {
       localStorage.clear()
       this.$router.push({ name: 'Home' })
     },
-    btn() {
-      this.abcd = !this.abcd
+    toggleNavbar() {
+      this.showMenu = !this.showMenu
     },
+    // btn() {
+    //   this.abcd = !this.abcd
+    // },
   },
   async mounted() {
     const result = await axios.get(

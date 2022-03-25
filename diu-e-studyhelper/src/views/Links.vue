@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-100">
-    <NavLanding />
+    <Header />
 
     <section class="py-5 mt-5 max-w-6xl mx-auto">
       <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
@@ -230,12 +230,12 @@
 </template>
 
 <script>
-import NavLanding from '../components/NavLanding.vue'
+import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 export default {
   name: 'Links',
   components: {
-    NavLanding,
+    Header,
     Footer,
   },
 }

@@ -32,6 +32,11 @@ const SignUpSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  // created: {
+  //   type: Date,
+  //   required: true,
+  //   default: Date.now,
+  // },
 })
 
 module.exports = SignUpSchema

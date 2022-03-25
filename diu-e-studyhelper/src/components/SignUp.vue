@@ -48,9 +48,7 @@
   > -->
     <NavLanding />
     <div class="flex mt-5 items-center justify-center min-h-screen bg-gray-100">
-      <div
-        class="px-8 py-6 mx-4 mt-5 text-left bg-white shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3"
-      >
+      <div class="px-8 py-6 mx-4 mt-5 text-left bg-white shadow-lg">
         <h3 class="text-2xl font-bold text-center">Join us</h3>
 
         <div class="mt-2">
@@ -117,6 +115,7 @@
             <label class="block" for="image">Upload Your Image</label>
             <input
               type="file"
+              name="image"
               placeholder="Upload Your Image"
               @change="onFileSelected"
               class="w-full py-2"
@@ -300,9 +299,9 @@ export default {
         this.$router.push({ name: 'Login' })
       }
     },
-    onFileSelected(event) {
-      this.image = event.target.file[0]
-    },
+    // onFileSelected(event) {
+    //   this.image = event.target.file[0]
+    // },
   },
   // mounted() {
   //   const user = localStorage.getItem('user-info')

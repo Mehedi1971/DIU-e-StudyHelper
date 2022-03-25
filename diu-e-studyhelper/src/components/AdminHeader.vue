@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!user">
+    <!-- <div v-if="!user">
       <nav
         class="flex flex-wrap items-center justify-between px-2 py-6 bg-white mb-3 fixed top-0 inset-x-0 z-50"
       >
@@ -12,10 +12,10 @@
           >
             <div class="flex items-center cursor-pointer">
               <router-link to="/" class="hover:no-underline">
-                <img src="../assets/diu05.png" alt="" class="h-11 w-12"
-              /></router-link>
+                <img src="../assets/diulogo04.svg" alt="" class="h-11 w-12"
+              /></router-link> -->
 
-              <!-- <span class="text-green-500 text-xl mr-1">
+    <!-- <span class="text-green-500 text-xl mr-1">
                 <i class="bi bi-stack"></i>
               </span>
               <router-link to="/" class="hover:no-underline">
@@ -24,7 +24,7 @@
                   ><span class="text-green-500">-StudyHelper</span>
                 </h1></router-link
               > -->
-            </div>
+    <!-- </div>
             <button
               class="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -38,47 +38,6 @@
             class="lg:flex lg:flex-grow items-center"
           >
             <ul class="flex flex-col lg:flex-row list-none ml-auto">
-              <li>
-                <router-link
-                  to="/"
-                  class="px-3 py-2 flex items-center text-xs uppercase font-bold text-black hover:opacity-75 hover:no-underline"
-                >
-                  <i class="text-lg leading-lg text-black opacity-75" /><span
-                    class="ml-2"
-                    >Home</span
-                  >
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  to="/forum"
-                  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
-                >
-                  <i
-                    class="fab fa-twitter text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">Forum</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  to="/about"
-                  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
-                >
-                  <i
-                    class="fab fa-pinterest text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">About</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  to="/contact"
-                  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
-                >
-                  <i
-                    class="fab fa-pinterest text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">Contact</span>
-                </router-link>
-              </li>
               <li>
                 <router-link
                   to="/Login"
@@ -104,10 +63,10 @@
         </div>
       </nav>
       <div><router-view /></div>
-    </div>
+    </div> -->
 
     <!-- 2nd -->
-    <div v-if="user">
+    <div v-if="!user">
       <nav
         class="flex flex-wrap items-center justify-between px-2 py-6 bg-white mb-3 fixed top-0 inset-x-0 z-50"
       >
@@ -143,64 +102,44 @@
             <ul class="flex flex-col lg:flex-row list-none ml-auto">
               <li>
                 <router-link
-                  to="/"
+                  to="/adminDashboard"
                   class="px-3 py-2 flex items-center text-xs uppercase font-bold text-black hover:opacity-75 hover:no-underline"
                 >
                   <i class="text-lg leading-lg text-black opacity-75" /><span
                     class="ml-2"
-                    >Home</span
+                    >Admin Dashboard</span
                   >
                 </router-link>
               </li>
               <li>
                 <router-link
-                  to="/dashboard"
-                  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
-                >
-                  <i
-                    class="fab fa-pinterest text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">Dashboard</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  to="/forum"
+                  to="/adminQuestionBank"
                   class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
                 >
                   <i
                     class="fab fa-twitter text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">Forum</span>
+                  /><span class="ml-2">Question Bank</span>
                 </router-link>
               </li>
               <li>
                 <router-link
-                  to="/about"
+                  to="#"
                   class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
                 >
                   <i
                     class="fab fa-pinterest text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">About</span>
+                  /><span class="ml-2">Course Materials</span>
                 </router-link>
               </li>
               <li>
                 <router-link
-                  to="/contact"
-                  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
-                >
-                  <i
-                    class="fab fa-pinterest text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">Contact</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  to="/Home"
+                  to="/Login"
                   @click="logout"
                   class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
                 >
                   <i
                     class="fab fa-pinterest text-lg leading-lg text-black opacity-75"
-                  /><span class="ml-2">Sign out</span>
+                  /><span class="ml-2">Logout</span>
                 </router-link>
               </li>
               <!-- <li>
@@ -233,22 +172,19 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'About',
   data() {
     return {
-      user: null,
+      // user: null,
       showMenu: false,
     }
   },
   async mounted() {
-    const result = await axios.get(
-      'http://localhost:3000/api/eStudyHelper/user/'
-    )
-    this.user = result.data
-    if (!result) {
-      this.$router.push({ name: 'SignUp' })
+    const user = localStorage.getItem('user-info')
+    if (!user) {
+      this.$router.push({ name: 'AdminLogin' })
     }
   },
   methods: {
