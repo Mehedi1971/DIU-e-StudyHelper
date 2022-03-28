@@ -12,10 +12,12 @@ import Todo from '../components/Todo.vue'
 import Forum from '../views/Forum.vue'
 import Dashboard from '../views/Dashboard.vue'
 import AdminQuestionBank from '../views/AdminQuestionBank.vue'
+import AdminCourseMaterials from '../views/AdminCourseMaterials.vue'
 import AdminLogin from '../components/AdminLogin.vue'
 import AdminSignUp from '../components/AdminSignUp.vue'
 import AdminDashboard from '../views/AdminDashboard.vue'
 import CourseMaterialsLinks from '../views/CourseMaterialsLinks.vue'
+import Contact from '../views/Contact.vue'
 
 const routes = [
   {
@@ -27,6 +29,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About,
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
   },
   {
     path: '/links',
@@ -47,6 +54,11 @@ const routes = [
     path: '/adminQuestionBank',
     name: 'AdminQuestionBank',
     component: AdminQuestionBank,
+  },
+  {
+    path: '/adminCourseMaterials',
+    name: 'AdminCourseMaterials',
+    component: AdminCourseMaterials,
   },
   {
     path: '/coursematerials',

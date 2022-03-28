@@ -1,4 +1,16 @@
 const mongoose = require('mongoose')
+const TodoSchema = require('../models/TodoList')
+// const TodoSchema = mongoose.Schema({
+//   description: {
+//     type: String,
+//     required: true,
+//   },
+//   date: {
+//     type: Date,
+//     default: Date.now,
+//   },
+// })
+
 const SignUpSchema = mongoose.Schema({
   name: {
     type: String,
@@ -30,8 +42,8 @@ const SignUpSchema = mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
   },
+  Todo: [TodoSchema],
   // created: {
   //   type: Date,
   //   required: true,

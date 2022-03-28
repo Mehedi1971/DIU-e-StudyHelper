@@ -14,13 +14,11 @@
             ID
           </th>
           <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">#</th>
-          <!-- <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">#</th> -->
         </tr>
         <tr v-for="items in Users" :key="items.id" class="border-2">
           <td class="p-3 text-sm text-gray-700">{{ items.name }}</td>
           <td class="p-3 text-sm text-gray-700">{{ items.email }}</td>
           <td class="p-3 text-sm text-gray-700">{{ items.studentID }}</td>
-          <!-- <td class="p-3 text-sm text-gray-700">{{ items._id }}</td> -->
           <td>
             <div>
               <button
@@ -57,7 +55,7 @@ export default {
     let result = await axios.get(
       'http://localhost:3000/api/eStudyHelper/admin/user/'
     )
-    // console.log(result)
+
     this.Users = result.data
     const user = localStorage.getItem('user-info')
     if (!user) {
@@ -75,11 +73,9 @@ export default {
         let result = await axios.get(
           'http://localhost:3000/api/eStudyHelper/admin/user/'
         )
-        // console.log(result)
+
         this.Users = result.data
       }
-      // console.log(result, id)
-      // this.Users = result.data
     },
   },
 }

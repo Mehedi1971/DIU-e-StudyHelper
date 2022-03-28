@@ -10,13 +10,35 @@
           {{ course }}
         </h1>
         <hr />
-        <!-- <h1 class="p-2 pl-4">
-          <span class="font-bold">course:</span> {{ course }}
-        </h1> -->
+        <h1 class="p-2 pl-4">
+          <span class="font-bold">Topic:</span> {{ topic }}
+        </h1>
+        <h1 class="p-2 pl-4">
+          <span class="font-bold"> Video: </span>
+          <a
+            :href="video"
+            class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hover:no-underline"
+            target="_blank"
+          >
+            Open Video
+            <svg
+              class="ml-2 -mr-1 w-4 h-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+        </h1>
         <h1 class="p-2 pl-4">
           <span class="font-bold"> Slide: </span>
           <a
-            :href="questions"
+            :href="slide"
             class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hover:no-underline"
             target="_blank"
           >
@@ -35,15 +57,6 @@
             </svg>
           </a>
         </h1>
-        <!-- <h1 class="p-2 pl-4"><span class="font-bold">id:</span> {{ id }}</h1> -->
-        <!-- <h1 class="p-2 pl-4">
-          <span class="font-bold">Student Id:</span> {{ studentID }}
-        </h1>
-        <h1 class="p-2 pl-4">
-          <span class="font-bold">Address:</span> {{ address }}
-        </h1> -->
-
-        <!-- <router-link to="`/updateprofile/`+items.id">edit profile</router-link>  -->
       </div>
     </div>
     <Footer />
@@ -64,7 +77,9 @@ export default {
   data() {
     return {
       course: '',
-      questions: '',
+      topic: '',
+      slide: '',
+      video: '',
       id: '',
     }
   },
@@ -82,7 +97,9 @@ export default {
         this.$route.params.id
     )
     this.course = result.data.course
-    this.questions = result.data.questions
+    this.topic = result.data.topic
+    this.slide = result.data.slide
+    this.video = result.data.video
     this.id = result.data._id
 
     console.log(result)

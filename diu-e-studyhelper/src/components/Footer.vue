@@ -44,7 +44,6 @@
               <router-link to="/contact" class="text-gray-600"
                 >Contact</router-link
               >
-              <!-- <a href="/contact" class="text-gray-600">Contact</a> -->
             </p>
           </div>
           <div class="">

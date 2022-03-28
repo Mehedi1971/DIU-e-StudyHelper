@@ -10,7 +10,7 @@
           <h1
             class="text-bookmark-grey text-5xl lg:text-left mb-6 font-bold text-blue-500 py-2"
           >
-            Connect with Diu Largest Online Forum
+            Connect with Diu's Largest Online Forum
           </h1>
           <div class="py-5" v-if="!user">
             <router-link to="/signUp" class="btn btn-outline-primary"
@@ -23,20 +23,7 @@
             >
           </div>
         </div>
-        <!-- <svg
-          class="h-30 w-full mr-1 text-blue-400"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-          />
-        </svg> -->
+
         <div></div>
         <img
           src="../assets/programming-illustrations.svg"
@@ -112,12 +99,6 @@
               saving time. Our software also will take care of miscellaneous
               information.
             </p>
-            <!-- <button
-              type="button"
-              class="btn btn-purple hover:bg-bookmark-white hover:text-black"
-            >
-              More Info
-            </button> -->
           </div>
         </div>
         <!-- Rounded Rectangle -->
@@ -198,7 +179,7 @@
       <div class="container">
         <!-- Heading -->
         <div class="sm:w-3/4 lg:w-5/12 mx-auto px-2">
-          <h1 class="text-3xl text-justify text-bookmark-blue">
+          <h1 class="text-3xl text-center text-bookmark-blue">
             Frequently Asked Questions
           </h1>
           <p class="text-center text-bookmark-grey mt-4">
@@ -225,53 +206,6 @@
     </section>
 
     <Footer />
-
-    <!-- Contact Us
-    <section class="bg-bookmark-purple text-white py-5 mt-5 max-w-6xl mx-auto">
-      <div class="container">
-        <div class="sm:w-3/4 lg:w-2/4 mx-auto">
-          <p class="font-light uppercase text-center mb-8">
-            35,000+ ALREADY JOINED
-          </p>
-          <h1 class="text-3xl text-center">
-            Stay up-to-date with what we’re doing
-          </h1>
-          <div class="flex flex-col sm:flex-row gap-6 mt-8">
-            <input
-              type="text"
-              placeholder="Enter your email address"
-              class="focus:outline-none flex-1 px-2 py-3 rounded-md text-black"
-            />
-            <button
-              type="button"
-              class="btn bg-bookmark-red hover:bg-bookmark-white hover:text-black"
-            >
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Footer -->
-    <!-- <footer class="bg-bookmark-blue py-8 max-w-6xl mx-auto">
-      <div class="container flex flex-col md:flex-row items-center">
-        <div
-          class="flex flex-1 flex-wrap items-center justify-center md:justify-start gap-12"
-        >
-          <img src="../assets/logo-bookmark-white.png" alt="" />
-          <ul class="flex text-white uppercase gap-12 text-xs">
-            <li class="cursor-pointer">Features</li>
-            <li class="cursor-pointer">Pricing</li>
-            <li class="cursor-pointer">Contact</li>
-          </ul>
-        </div>
-        <div class="flex gap-10 mt-12 md:mt-0">
-          <li><i class="text-white text-2xl fab fa-twitter"></i></li>
-          <li><i class="text-white text-2xl fab fa-facebook-square"></i></li>
-        </div>
-      </div>
-    </footer> -->
   </div>
 </template>
 
@@ -292,9 +226,6 @@ export default {
   async mounted() {
     const result = await axios.get('user')
     this.user = result.data
-    // if (!result) {
-    //   this.$router.push({ name: 'SignUp' })
-    // }
   },
   methods: {
     toggleNavbar() {

@@ -64,61 +64,6 @@
       </tbody>
     </table>
   </div>
-  <!-- <div class="container" style="max-width: 600px">
-    <h1 class="text-center mt-5">Todo List:</h1>
-    <hr />
-    <div>
-      <div class="d-flex mt-5">
-        <input
-          class="w-100 form-control"
-          v-model="description"
-          type="text"
-          placeholder="Go to mars..."
-        />
-      </div>
-      <div>
-        <a @click="addItem" :disabled="!description">Add</a>
-      </div>
-    </div>
-    <div class="items-center">
-      <div
-        class="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 transform transition duration-500 hover:scale-110"
-        v-for="(item, i) in items"
-        :key="item._id"
-      >
-        <div>
-          <input
-            class="w-100 form-control"
-            v-if="isSelected(item)"
-            v-model="editedDescription"
-          />
-          <p v-else>
-            <span>{{ i + 1 }}</span>
-            {{ item.description }}
-          </p>
-          <div>
-            <span @click="isSelected(item) ? unselect() : select(item)">
-              <i
-                class="text-blue-400 font-semibold py-2 px-4 hover:text-blue-700"
-                >{{ isSelected(item) ? 'close' : 'edit' }}</i
-              >
-            </span>
-
-            <span
-              @click="
-                isSelected(item) ? updateItem(item, i) : removeItem(item, i)
-              "
-            >
-              <i
-                class="text-blue-400 font-semibold py-2 px-4 hover:text-blue-700"
-                >{{ isSelected(item) ? 'save' : 'delete' }}</i
-              >
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 </template>
 
 <script>

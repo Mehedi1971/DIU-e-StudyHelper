@@ -3,10 +3,12 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const QuestionBank = require('../../models/QuestionBank')
+const CourseMaterials = require('../../models/CourseMaterials')
 const SignUp = require('../../models/SignUp')
 const Todo = require('../../models/TodoList')
 const Admin = require('../../models/Admin')
 const QBank = new mongoose.model('QuestionBank', QuestionBank)
+const Courses = new mongoose.model('CourseMaterials', CourseMaterials)
 const Sign = new mongoose.model('SignUp', SignUp)
 const TodoList = new mongoose.model('Todo', Todo)
 const AdminPanel = new mongoose.model('Admin', Admin)
@@ -33,7 +35,8 @@ const AdminPanel = new mongoose.model('Admin', Admin)
 // }).single('file')
 
 const router = express.Router()
-//new
+
+//SignUp
 router.post('/signup/', async (req, res) => {
   // console.log(req.file)
   // const sign = new Sign(req.body)
@@ -49,6 +52,9 @@ router.post('/signup/', async (req, res) => {
     studentID: req.body.studentID,
     address: req.body.address,
     password: hashedPassword,
+    todo: {
+      description: req.body.description,
+    },
   })
 
   try {
@@ -255,19 +261,35 @@ router.post('/questionBank', async (req, res) => {
 //   }
 // })
 
+//CourseMaterials
+
+router.post('/coursematerials', async (req, res) => {
+  const courses = new Courses(req.body)
+  try {
+    const result = await courses.save()
+    res.json(result)
+  } catch (err) {
+    res.json(500).json({
+      err: 'this is an server site error',
+    })
+  }
+})
+
 router.get('/coursematerials', async (req, res) => {
   const level = req.query.level
   const term = req.query.term
   const course = req.query.course
+  // const topic = req.query.topic
 
   // const te = req.query.level
   try {
-    const qbank = await QBank.find({
+    const courses = await Courses.find({
       level: level,
       term: term,
       course: course,
+      // topic: topic,
     })
-    res.json(qbank)
+    res.json(courses)
   } catch (err) {
     res.json(500).json({
       err: 'this is an server site error',
@@ -277,8 +299,8 @@ router.get('/coursematerials', async (req, res) => {
 
 router.get('/coursematerials/links/:id', async (req, res) => {
   try {
-    const qbank = await QBank.findById(req.params.id)
-    res.json(qbank)
+    const courses = await Courses.findById(req.params.id)
+    res.json(courses)
   } catch (err) {
     res.json(500).json({
       err: 'this is an server site error',

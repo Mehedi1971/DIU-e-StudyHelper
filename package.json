@@ -6,7 +6,9 @@
   "scripts": {
     "server": "nodemon server.js --ignore 'diu-e-studyhelper/'",
     "diu-e-studyhelper": "npm run serve --prefix diu-e-studyhelper",
-    "dev": "concurrently \"npm run server\" \"npm run diu-e-studyhelper\""
+    "dev": "concurrently \"npm run server\" \"npm run diu-e-studyhelper\"",
+    "start": "node server.js",
+    "build": "npm install --prefix diu-e-studyhelper && npm run build --prefix diu-e-studyhelper"
   },
   "author": "",
   "license": "ISC",

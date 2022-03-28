@@ -37,56 +37,12 @@
           </button>
         </div>
 
-        <!-- <div class="content-center">
-          <table class="w-full mb-8">
-            <tr class="content-center">
-              <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">
-                Level
-              </th>
-              <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">
-                Term
-              </th>
-              <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">
-                Department
-              </th>
-              <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">
-                Shift
-              </th>
-              <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">
-                Exam
-              </th>
-              <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">
-                Course
-              </th>
-              <th class="p-3 text-sm font-semibold tracking-wide bg-gray-200">
-                Question
-              </th>
-            </tr>
-            <tr v-for="items in questionBank" :key="items.id" class="border-2">
-              <td class="p-3 text-sm text-gray-700">{{ items.level }}</td>
-              <td class="p-3 text-sm text-gray-700">{{ items.term }}</td>
-              <td class="p-3 text-sm text-gray-700">{{ items.department }}</td>
-              <td class="p-3 text-sm text-gray-700">{{ items.shitf }}</td>
-              <td class="p-3 text-sm text-gray-700">{{ items.exam }}</td>
-              <td class="p-3 text-sm text-gray-700">{{ items.course }}</td>
-              <td class="p-3 text-sm text-gray-700">
-                <a
-                  :href="items.questions"
-                  class="text-blue-500 font-bold hover:no-underline"
-                  target="_blank"
-                  >Download</a
-                >
-              </td>
-            </tr>
-          </table>
-        </div> -->
-
         <section class="max-w-6xl mx-auto">
           <div
             class="container grid grid-cols-1 md:grid-cols-3 gap-16 max-w-screen mt-16"
           >
             <div
-              v-for="items in questionBank"
+              v-for="items in courseMaterials"
               :key="items.id"
               class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 transform transition duration-500 hover:scale-110"
             >
@@ -95,7 +51,7 @@
                 src="../assets/diu05.png"
                 alt="Sunset in the mountains"
               />
-              <!-- :href="items.questions" -->
+
               <div class="p-6">
                 <a
                   :href="`/courseMaterialsLinks/` + items._id"
@@ -107,9 +63,10 @@
                     {{ course }}
                   </h5>
                 </a>
-                <!-- target="_blank" -->
+
                 <p>Term: {{ term }}</p>
                 <p>Level: {{ level }}</p>
+                <p>Topic: {{ items.topic }}</p>
 
                 <a
                   :href="`/courseMaterialsLinks/` + items._id"
@@ -146,7 +103,7 @@ import axios from 'axios'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 export default {
-  name: 'QuestionsBank',
+  name: 'CourseMaterials',
   components: {
     Header,
     Footer,
@@ -155,13 +112,10 @@ export default {
     return {
       level: '',
       term: '',
-      department: '',
-      shitf: '',
       course: '',
-      questions: '',
-      exam: '',
+      topic: '',
       id: '',
-      questionBank: [],
+      courseMaterials: [],
     }
   },
   created() {
@@ -181,12 +135,8 @@ export default {
 
       console.log(result)
 
-      this.questionBank = result.data
+      this.courseMaterials = result.data
 
-      // if (result.status == 200 && result.data.length > 0) {
-      //   console.log('k')
-      //   this.url = result.url
-      // }
       if (localStorage.getItem('jwt') === null) {
         this.$router.push('/login')
       }

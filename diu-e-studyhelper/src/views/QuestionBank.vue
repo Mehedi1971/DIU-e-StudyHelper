@@ -18,9 +18,24 @@
         </select>
         <select v-model="course" class="bg-gray-100 m-3 p-2">
           <option disabled value="">Course</option>
+          <option>Computer Fundamentals</option>
+          <option>Basic Mathematics</option>
+          <option>Basic Functional English and English Spoken</option>
+          <option>
+            Mathematics II : Calculus, Complex Variables and Linear Algebra
+          </option>
+          <option>Programming and Problem Solving</option>
+          <option>Discrete Mathematics</option>
+          <option>Data Structures</option>
+          <option>Object Oriented Programming</option>
           <option>Financial and Managerial Accounting</option>
-          <option>2</option>
-          <option>3</option>
+          <option>Algorithm</option>
+          <option>Statistics and Probability</option>
+          <option>Database Management System</option>
+          <option>Compiler Design</option>
+          <option>Artificial Intelligence</option>
+          <option>Computer Graphics</option>
+          <option>Embedded System</option>
         </select>
         <select v-model="exam" class="bg-gray-100 m-3 p-2">
           <option disabled value="">Exam</option>
