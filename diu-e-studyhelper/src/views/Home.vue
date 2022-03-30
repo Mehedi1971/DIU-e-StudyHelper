@@ -6,7 +6,7 @@
     >
       <div class="md:flex justify-between items-center py-10 max-w-6xl mx-auto">
         <div class="text-left pl-6">
-          <p class="text-2xl text-gray-600">Largest Platform of Diu</p>
+          <p class="text-2xl text-gray-600">Connect and Build Your Future</p>
           <h1
             class="text-bookmark-grey text-5xl lg:text-left mb-6 font-bold text-blue-500 py-2"
           >
