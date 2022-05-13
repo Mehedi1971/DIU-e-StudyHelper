@@ -41,7 +41,7 @@
               </li>
               <li>
                 <a
-                  href="https://diucseforum.herokuapp.com/"
+                  href="https://diucseforumv2.herokuapp.com/"
                   class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
                 >
                   <i
@@ -157,7 +157,7 @@
               </li>
               <li>
                 <a
-                  href="https://diucseforum.herokuapp.com/"
+                  href="https://diucseforumv2.herokuapp.com/"
                   class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75 hover:no-underline"
                 >
                   <i

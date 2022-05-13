@@ -90,7 +90,7 @@
                 </li>
                 <li>
                   <a
-                    href="https://diucseforum.herokuapp.com/"
+                    href="https://diucseforumv2.herokuapp.com/"
                     class="hover:no-underline text-black font-semibold rounded-lg px-4 | hover:bg-gray-200"
                     >Forum</a
                   >
