@@ -148,7 +148,7 @@ export default {
         `http://localhost:3000/api/eStudyHelper/coursematerials?level=${this.level}&term=${this.term}&course=${this.course}`
       )
 
-      console.log(result)
+      // console.log(result)
 
       this.courseMaterials = result.data
 

@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     async Remove(_id) {
-      console.log(_id)
+      // console.log(_id)
       let result = await axios.delete(
         'http://localhost:3000/api/eStudyHelper/admin/user/' + _id
       )

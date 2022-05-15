@@ -96,7 +96,7 @@ export default {
     this.studentID = result.data.studentID
     this.id = result.data._id
     this.address = result.data.address
-    console.log(result.data._id)
+    // console.log(result.data._id)
 
     if (!result) {
       this.$router.push({ name: 'Profile' })
